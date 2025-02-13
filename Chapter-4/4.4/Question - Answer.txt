@@ -1,0 +1,21 @@
+Quiz time
+
+Question #1
+
+What would the range of a 5-bit signed integer be?
+
+Solution: 
+A 5-bit number can support 25 = 32 unique values. For a signed integer, these are split almost evenly amongst positive and negative numbers, with negative receiving an extra value. So the range would be -16 to 15.
+
+Another way to think about this: 1 of the 5 bits is required to hold the sign. That leaves 4 bits for the magnitude. With 4 bits, we have 16 unique values available. On the negative side, these magnitude bits represent values -1 to -16. On the non-negative side, these magnitude bits represent values 0 to 15. The non-negative side has one less value of range because it includes 0.
+
+Question #2
+
+a) What is the result of 13 / 5?
+
+Solution: 13 / 5 = 2 remainder 3. The remainder is dropped, leaving 2.
+
+b) What is the result of -13 / 5?
+
+Solution: -13 / 5 = -2 remainder -3. The remainder is dropped, leaving -2.
+
