@@ -73,5 +73,5 @@ If you spot any errors or have suggestions for better solutions, feel free to op
 This repository is licensed under the MIT License. Feel free to use the code and content for your own learning or projects.
 <br> <br>
 **Connect with Me** 🌐 <br>
-GitHub: MasterFru <br>
-Twitter: @Master Fru
+GitHub: @MahmudGalib7 <br>
+
