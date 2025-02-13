@@ -1,0 +1,27 @@
+Quiz time
+
+Question #1
+
+
+For each of the following, indicate what output they produce:
+a)
+
+std::cout << 3 + 4 << '\n';
+Solution: 7
+b)
+
+std::cout << 3 + 4 - 5 << '\n';
+Solution: 2
+c)
+
+std::cout << 2 + 3 * 4 << '\n';
+Solution:
+
+Multiplication goes before addition, so 3 * 4 goes first, producing the result 12. 2 + 12 is 14.
+d) Extra credit:
+
+int x { 2 };
+std::cout << (x = 5) << '\n';
+Solution:
+
+x = 5 ssigns the value 5 to x, and then returns x. The value of x (now 5) is then printed to the console.

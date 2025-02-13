@@ -1,0 +1,103 @@
+Quiz time
+
+Question #1
+
+What’s wrong with this program fragment?
+
+#include <iostream>
+
+void multiply(int x, int y)
+{
+    return x * y;
+}
+
+int main()
+{
+    std::cout << multiply(4, 5) << '\n';
+
+    return 0;
+}
+
+Solution: The program wont compile, because void doesnt return any values 
+
+Question #2
+
+What two things are wrong with this program fragment?
+
+#include <iostream>
+
+int multiply(int x, int y)
+{
+    int product { x * y };
+}
+
+int main()
+{
+    std::cout << multiply(4) << '\n';
+
+    return 0;
+}
+
+Solution: First problem is that the function take two values but it was provided one
+          Secondly, the function didnt return any values, which will lead to a fatal error
+
+Question #3
+
+What value does the following program print?
+
+#include <iostream>
+
+int add(int x, int y, int z)
+{
+    return x + y + z;
+}
+
+int multiply(int x, int y)
+{
+    return x * y;
+}
+
+int main()
+{
+    std::cout << multiply(add(1, 2, 3), 4) << '\n';
+
+    return 0;
+}
+
+Solution: 
+
+Question #4
+
+Write a function called doubleNumber() that takes one integer parameter. The function should return double the value of the parameter.
+
+
+Solution: If we debug the code, it will be like this:
+            at first there are two functions for add & multiply
+            int the main function add function is used in the multiply function
+            so, here the add has the value of 1,2,3 which stands for 6
+            and now the 6 value is used in the multiply function with the value 6 & 4, which stands for 24
+        
+        So, the value would be 24
+
+Question #5
+
+Write a complete program that reads an integer from the user, doubles it using the doubleNumber() function you wrote in the previous quiz question, and then prints the doubled value out to the console.
+Solution:
+
+#include <iostream>
+using namespace std;
+
+int doubleNumber(int value) {
+    cout << value << "double is " << value * 2 << endl;
+}
+
+int main() {
+    int value;
+
+    cout << "Enter an Integer: ";
+    cin >> value;
+
+    doubleNumber(value);
+
+    return 0;
+}

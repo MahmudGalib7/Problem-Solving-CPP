@@ -1,0 +1,55 @@
+Quiz time
+
+Question #1
+
+Split the following program into two files (main.cpp, and input.cpp). main.cpp should have the main function, and input.cpp should have the getInteger function.
+
+
+Hint: Don’t forget that you’ll need a forward declaration in main.cpp for function getInteger().
+#include <iostream>
+
+int getInteger()
+{
+	std::cout << "Enter an integer: ";
+	int x{};
+	std::cin >> x;
+	return x;
+}
+
+int main()
+{
+	int x{ getInteger() };
+	int y{ getInteger() };
+
+	std::cout << x << " + " << y << " is " << x + y << '\n';
+	return 0;
+}
+Hide Solution
+
+input.cpp:
+
+#include <iostream> // we need iostream since we use it in this file
+
+int getInteger()
+{
+	std::cout << "Enter an integer: ";
+	int x{};
+	std::cin >> x;
+	return x;
+}
+main.cpp:
+
+#include <iostream> // we need iostream here too since we use it in this file as well
+
+int getInteger(); // forward declaration for function getInteger
+
+int main()
+{
+	int x{ getInteger() };
+	int y{ getInteger() };
+
+	std::cout << x << " + " << y << " is " << x + y << '\n';
+	return 0;
+}
+
+in compiler : g++ main.cpp input.cpp -o program

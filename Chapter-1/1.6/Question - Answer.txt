@@ -1,0 +1,11 @@
+Question #1
+
+What is an uninitialized variable? Why should you avoid using them?
+
+Solution :-An uninitialized variable is a variable that has not been given a value by the program (generally through initialization or assignment). Using the value stored in an uninitialized variable will result in undefined behavior.
+
+Question #2
+
+What is undefined behavior, and what can happen if you do something that exhibits undefined behavior?
+
+Solution:- Undefined behavior is the result of executing code whose behavior is not well defined by the language. The result can be almost anything, including something that behaves correctly.

@@ -1,0 +1,193 @@
+Quiz time
+
+Question #1
+
+The following program is supposed to add two numbers, but doesn’t work correctly.
+
+Use the integrated debugger to step through this program and watch the value of x. Based on the information you learn, fix the following program:
+
+#include <iostream>
+
+int readNumber(int x)
+{
+	std::cout << "Please enter a number: ";
+	std::cin >> x;
+	return x;
+}
+
+void writeAnswer(int x)
+{
+	std::cout << "The sum is: " << x << '\n';
+}
+
+int main()
+{
+	int x {};
+	readNumber(x);
+	x = x + readNumber(x);
+	writeAnswer(x);
+
+	return 0;
+}
+Solution:- 
+
+The major issue here is in the second line of function main -- the return value of readNumber isn’t assigned to anything, so it is discarded. A minor issue is that readNumber is taking an argument when it should have a local variable instead.
+
+#include <iostream>
+
+int readNumber()
+{
+	std::cout << "Please enter a number: ";
+	int x {};
+	std::cin >> x;
+	return x;
+}
+
+void writeAnswer(int x)
+{
+	std::cout << "The sum is: " << x << '\n';
+}
+
+int main()
+{
+	int x { readNumber() };
+	x = x + readNumber();
+	writeAnswer(x);
+
+	return 0;
+}
+
+Question #2
+
+The following program is supposed to divide two numbers, but doesn’t work correctly.
+
+Use the integrated debugger to step through this program. For inputs, enter 8 and 4. Based on the information you learn, fix the following program:
+
+#include <iostream>
+
+int readNumber()
+{
+	std::cout << "Please enter a number: ";
+	int x {};
+	std::cin >> x;
+	return x;
+}
+
+void writeAnswer(int x)
+{
+	std::cout << "The quotient is: " << x << '\n';
+}
+
+int main()
+{
+	int x{ };
+	int y{ };
+	x = readNumber();
+	x = readNumber();
+	writeAnswer(x/y);
+
+	return 0;
+}
+Solution:- 
+The issue here is that the second call to readNumber accidentally assigns its value to x instead of y, resulting in a division by 0, which causes undefined behavior.
+
+#include <iostream>
+
+int readNumber()
+{
+	std::cout << "Please enter a number: ";
+	int x {};
+	std::cin >> x;
+	return x;
+}
+
+void writeAnswer(int x)
+{
+	std::cout << "The quotient is: " << x << '\n';
+}
+
+int main()
+{
+	int x{ readNumber() };
+	int y{ readNumber() };
+	writeAnswer(x/y);
+
+	return 0;
+}
+You may notice that when the second input doesn’t divide evenly into the first, this program appears to produce an incorrect answer. When doing division with integers, C++ will drop any fractional parts of the quotient
+
+
+
+Question #3
+
+What does the call stack look like in the following program when the point of execution is on line 4? Only the function names are needed for this exercise, not the line numbers indicating the point of return.
+
+We talk about the call stack in lesson 3.9 -- Using an integrated debugger: The call stack.
+
+#include <iostream>
+
+void d()
+{ // here
+}
+
+void c()
+{
+}
+
+void b()
+{
+	c();
+	d();
+}
+
+void a()
+{
+	b();
+}
+
+int main()
+{
+	a();
+
+	return 0;
+}
+Solution:- 
+d
+b
+a
+main
+
+Question #4
+
+Extra credit: The following program is supposed to add two numbers, but doesn’t work correctly.
+
+Use the integrated debugger to step through this program. For inputs, enter 8 and 4. Based on the information you learn, fix the following program:
+
+#include <iostream>
+
+int readNumber()
+{
+    std::cout << "Please enter a number: ";
+    char x{};
+    std::cin >> x;
+
+    return x;
+}
+
+void writeAnswer(int x)
+{
+    std::cout << "The sum is: " << x << '\n';
+}
+
+int main()
+{
+    int x { readNumber() };
+    int y { readNumber() };
+    writeAnswer(x + y);
+
+    return 0;
+}
+Solution:- 
+he issue is the char data type on line 6. When we enter numeric value 8, it is not stored as the value 8, it is stored as 56 instead. When we enter numeric value 4, it is not stored as the value 4, it is stored as 52 instead. The readNumber() function thus returns 56 and 52 instead of 8 and 4 as expected.
+
+The solution is to change the data type on line 6 from char to int.

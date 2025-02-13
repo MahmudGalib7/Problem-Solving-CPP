@@ -1,0 +1,40 @@
+Question #1
+
+What is data?
+
+Solution:- Data is any information that can be moved, processed, or stored by a computer.
+
+Question #2
+
+What is a value?
+
+Solution:- A value is a letter (e.g. a), number (e.g. 5), text (e.g. Hello), or instance of some other useful concept that can be represented as data.
+
+Question #3
+
+What is an object?
+
+Solution:-  An object is a region of storage (usually memory) that can store a value.
+Question #4
+
+What is a variable?
+
+Solution:- A variable is an object that has a name.
+
+Question #5
+
+What is an identifier?
+
+Solution:- An identifier is the name that a variable is accessed by
+
+Question #6
+
+What is a data type used for?
+
+Solution:-A data type determines what kind of value (e.g. a number, a letter, text, etc…) the object will store.
+
+Question #7
+
+What is an integer?
+
+Solution:- An integer is a number that can be written without a fractional component

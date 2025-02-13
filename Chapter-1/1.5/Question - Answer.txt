@@ -1,0 +1,87 @@
+Question #1
+
+Consider the following program that we used above:
+
+#include <iostream>  // for std::cout and std::cin
+
+int main()
+{
+    std::cout << "Enter a number: "; // ask user for a number
+    int x{}; // define variable x to hold user input
+    std::cin >> x; // get number from keyboard and store it in variable x
+    std::cout << "You entered " << x << '\n';
+
+    return 0;
+}
+
+The program expects you to enter an integer value, as the variable x that the user input will be put into is an integer variable.
+
+Run this program multiple times and describe the output that results when you enter the following types of input:
+
+a) A letter, such as h.
+
+Solution :- Result: 0 is always printed.
+            What’s happening: An integer can’t hold a letter, so extraction completely fails. x is assigned the value 0.
+
+b) A number with a fractional part (e.g. 3.2). Try numbers with fractional parts less than 0.5 and greater than 0.5 (e.g. 3.2 and 3.7).
+
+Solution :- Result: the int value is always printed & the fraction part in dropted
+            What’s happening: An integer can’t hold a fractional part (e.g. 3.2), so it extracts the integer part & drop the fraction part
+
+c) A small negative integer, such as -3.
+
+Solution :- Result: The value will always be printed
+            What’s happening: An integer can hold negative value as long as its an integer value 
+
+d) A word, such as Hello.
+
+Solution :- Result: 0 is always printed.
+            What’s happening: An integer can’t hold a string, so extraction completely fails. x is assigned the value 0.
+
+e) A really big number (at least 3 billion).
+
+Solution :- Result: Irrelevant numbers
+            What’s happening: An integer number can take a significat amount of number input together, so it crashes when the number is is larget than its capacity
+
+f) A small number followed by some letters, such as 123abc.
+
+Solution :- Results: The integer part will always be printed 
+            What’s happening: 123 is extracted, the remaining characters (e.g. abc) are left for a later extraction.
+
+g) A few letters followed by a small number, such as abc123.
+
+Solution :- Result: 0 is always printed.
+            What’s happening: An integer can’t hold a letter, so extraction completely fails. x is assigned the value 0.
+
+h) +5 (three spaces, followed by a plus symbol, and a 5).
+
+Solution :- Result: 5 is printed.   
+            What’s happening: The leading whitespace is skipped. Plus is a valid symbol at the start of a number (just as a minus sign would be), so it is extracted. The 5 is also extracted.
+
+h) 5b6.
+
+Solution :- Result: 5 is printed.
+            What’s happening: 5 is extracted. b is invalid, so extraction stops here. The b6 remains for a future extraction attempt.
+
+Question #2
+
+Ask the user to enter three values. The program should then print these values. Add an appropriate comment above function main().
+
+The program should match the following output (when run with input values 4, 5, and 6):
+
+Enter three numbers: 4 5 6
+You entered 4, 5, and 6.
+
+Solution :- 
+
+int main() {
+    std::cout << "Enter three number: "; 
+
+    int x{},y{},z{};
+
+    std::cin >> x >> y >> z;
+
+    std::cout << "You entered " << x << ", " << y << ", and " << z << '\n';
+    return 0;
+
+}

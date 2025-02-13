@@ -1,0 +1,151 @@
+Quiz time
+
+Be sure to use your editor’s auto-formatting feature to keep your formatting consistent and make your code easier to read.
+
+Question #1
+
+Write a single-file program (named main.cpp) that reads two separate integers from the user, adds them together, and then outputs the answer. The program should use three functions:
+
+A function named “readNumber” should be used to get (and return) a single integer from the user.
+A function named “writeAnswer” should be used to output the answer. This function should take a single parameter and have no return value.
+A main() function should be used to glue the above functions together.
+Show Hint
+
+Show Hint
+
+Solution:
+
+#include <iostream>
+
+using namespace std;
+
+int readNumber() {
+    int number;
+    cout << "Enter a integer: ";
+    cin >> number;
+
+    return number;
+}
+
+int writeAnswer(int num1, int num2) {
+    return num1 + num2;
+}
+
+int main() {
+    int num1;
+    int num2;
+
+    num1 = readNumber();
+    num2 = readNumber();
+    cout << "The sum of " << num1 << " & " << num2 << " is " << writeAnswer(num1,num2);
+
+    return 0;
+}
+
+
+Question #2
+
+Modify the program you wrote in exercise #1 so that readNumber() and writeAnswer() live in a separate file called “io.cpp”. Use a forward declaration to access them from main().
+
+If you’re having problems, make sure “io.cpp” is properly added to your project so it gets compiled.
+
+Solution:
+
+main.cpp:
+
+#include <iostream>
+using namespace std;
+
+int writeAnswer(int num1, int num2);
+int readNumber();
+
+int main() {
+    int num1;
+    int num2;
+
+    num1 = readNumber();
+    num2 = readNumber();
+    cout << "The sum of " << num1 << " & " << num2 << " is " << writeAnswer(num1,num2);
+
+    return 0;
+}
+
+io.cpp:
+
+
+#include <iostream>
+
+using namespace std;
+
+int readNumber() {
+    int number;
+    cout << "Enter a integer: ";
+    cin >> number;
+
+    return number;
+}
+
+int writeAnswer(int num1, int num2) {
+    return num1 + num2;
+}
+
+
+
+Question #3
+
+Modify the program you wrote in #2 so that it uses a header file (named io.h) to access the functions instead of using forward declarations directly in your code (.cpp) files. Make sure your header file uses header guards.
+
+If you compile your program and get errors like one of these:
+
+unresolved external symbol "int __cdecl readNumber(void)" (?readNumber@@YAHXZ)
+undefined reference to `readNumber()'
+Then you probably forgot to include io.cpp in your project, so the definitions for readNumber() (and writeAnswer()) aren’t being compiled into your project.
+
+Solution:
+
+main.cpp:
+
+#include <iostream>
+#include "io.h"
+using namespace std;
+
+int main()
+{
+    int num1;
+    int num2;
+
+    num1 = readNumber();
+    num2 = readNumber();
+    cout << "The sum of " << num1 << " & " << num2 << " is " << writeAnswer(num1, num2);
+
+    return 0;
+}
+
+io.cpp:
+
+
+#include <iostream>
+
+using namespace std;
+
+int readNumber() {
+    int number;
+    cout << "Enter a integer: ";
+    cin >> number;
+
+    return number;
+}
+
+int writeAnswer(int num1, int num2) {
+    return num1 + num2;
+}
+
+io.h:
+
+#ifndef IO_H
+#define IO_H
+
+int readNumber();
+int writeAnswer(int num1, int num2);
+
+#endif

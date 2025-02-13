@@ -1,0 +1,50 @@
+Quiz time
+
+Question #1 ) What is the difference between a statement and an expression? 
+
+Solution :-  Statements are used when we want the program to perform an action. Expressions are used when we want the program to calculate a value.
+
+Question #2) Indicate whether each of the following lines are statements that do not contain expressions, statements that contain expressions, or are expression statements.
+
+a) int x;
+
+Solution :- Statement does not contain an expression. This is a variable definition statement. x is not an expression in this context because it is being defined, not evaluated.
+
+b) int x = 5;
+
+Solution :-  Statement contains an expression. int x is a variable definition. The = is part of the syntax for copy initialization. The initializer to the right of the equals sign is an expression.
+
+c) x = 5;
+
+Solution :- Expression statement. x = 5 is a call to operator= with two operands: x and 5. The semicolon makes it an expression statement.
+
+d) Extra credit: foo(); // foo is a function
+
+Solution :- Function calls are part of an expression, so this is an expression statement.
+
+e) Extra credit: std::cout << x; // Hint: operator<< is a binary operator.
+
+Solution :- operator<< is a binary operator, so std::cout must be the left-hand operand, and x must be the right-hand operand. Since that’s the entire statement, this must be an expression statement.
+
+Question #3) Determine what values the following program outputs. Do not compile this program. Just work through it line by line in your head.
+
+#include <iostream>
+
+int main()
+{
+	std::cout << 2 + 3 << '\n';
+
+	int x{ 6 };
+	int y{ x - 2 };
+	std::cout << y << '\n';
+
+	int z{ };
+	z = x;
+	std::cout << z * x << '\n';
+
+	return 0;
+}
+
+Solution :- 5 
+4 
+36

@@ -1,0 +1,34 @@
+Quiz time
+
+Question #1
+
+Based on how you should name a variable, indicate whether each variable name is conventional (follows best practices), unconventional (compiler will accept but does not follow best practices), or invalid (will not compile), and why.
+
+int sum {};
+
+(Assume it’s obvious what we’re summing)
+Solution : Conventional.
+
+int _apples {};
+Solution : Unconventional -- variable names should not start with an underscore.
+
+int VALUE {};
+Solution : Unconventional -- single word names should be in all lower case.
+
+int my variable name {};
+Solution : Invalid -- variable names can not contain spaces.
+
+int TotalCustomers {};
+Solution : Unconventional -- variable names should start with a lower case letter.
+
+int void {};
+Solution : Invalid -- void is a keyword.
+
+int numFruit {};
+Solution : Conventional.
+
+int 3some {};
+Solution : Invalid -- variable names can not start with a number.
+
+int meters_of_pipe {};
+Solution : Conventional

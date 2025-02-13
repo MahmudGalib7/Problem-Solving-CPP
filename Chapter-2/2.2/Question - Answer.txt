@@ -1,0 +1,131 @@
+Inspect (do not compile) each of the following programs. Determine what the program will output, or whether the program will generate a compiler error.
+
+Assume you have “treat warnings as errors” turned off.
+
+1a)
+
+#include <iostream>
+
+int return7()
+{
+    return 7;
+}
+
+int return9()
+{
+    return 9;
+}
+
+int main()
+{
+    std::cout << return7() + return9() << '\n';
+
+    return 0;
+}
+Solution: 16
+
+1b)
+
+#include <iostream>
+
+int return7()
+{
+    return 7;
+
+    int return9()
+    {
+        return 9;
+    }
+}
+
+int main()
+{
+    std::cout << return7() + return9() << '\n';
+
+    return 0;
+}
+Solution: This program will not compile. Nested functions are not allowed.
+
+1c)
+
+#include <iostream>
+
+int return7()
+{
+    return 7;
+}
+
+int return9()
+{
+    return 9;
+}
+
+int main()
+{
+    return7();
+    return9();
+
+    return 0;
+}
+Solution: This program compiles but does not produce any output. The return values from the functions are not used for anything (and are thus discarded).
+
+1d)
+
+#include <iostream>
+
+int getNumbers()
+{
+    return 5;
+    return 7;
+}
+
+int main()
+{
+    std::cout << getNumbers() << '\n';
+    std::cout << getNumbers() << '\n';
+
+    return 0;
+}
+Solution: This program prints 5 twice (on separate lines). Both times when function getNumbers() is called, the value 5 is returned. When the return 5 statement is executed, the function is exited immediately, so the return 7 statement never executes.
+
+1e)
+
+#include <iostream>
+
+int return 5()
+{
+    return 5;
+}
+
+int main()
+{
+    std::cout << return 5() << '\n';
+
+    return 0;
+}
+Solution:  This program will not compile because the function has an invalid name
+
+1f) Extra credit: Will the following program compile?
+
+#include <iostream>
+
+int returnFive()
+{
+    return 5;
+}
+
+int main()
+{
+    std::cout << returnFive << '\n';
+
+    return 0;
+}
+Solution: This program will compile, but the function will not be called because the function call is missing parentheses.
+
+
+Question #2
+
+What does “DRY” stand for, and why is it a useful practice to follow?
+
+Solution:DRY stands for “Don’t Repeat Yourself”. It is a practice that involves writing your code in such a way so as to minimize redundancy. This makes your programs more concise, less error prone, and more maintainable.
+

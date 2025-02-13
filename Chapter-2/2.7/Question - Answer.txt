@@ -1,0 +1,121 @@
+Quiz time
+
+Question #1
+
+What is a function prototype?
+
+Solution:
+
+A function prototype is a declaration statement that includes a function’s name, return type, parameter types, and optionally the parameter names. It does not include the function body. It tells the compiler about the existence of a function before it is defined.
+
+Question #2
+
+What is a forward declaration?
+
+Solution: A forward declaration tells the compiler that an identifier exists before it is actually defined.
+
+Question #3
+
+How do we declare a forward declaration for functions?
+
+Solution: For functions, a function declaration/prototype serves as a forward declaration.
+
+Question #4
+
+Write the function declaration for this function (use the preferred form with names):
+
+int doMath(int first, int second, int third, int fourth)
+{
+     return first + second * third / fourth;
+}
+Solution: // Do not forget the semicolon at the end, since these are statements.
+          int doMath(int first, int second, int third, int fourth);
+
+Question #5
+
+For each of the following programs, state whether they fail to compile, fail to link, or compile and link successfully. If you are not sure, try compiling them!
+
+a)
+
+#include <iostream>
+int add(int x, int y);
+
+int main()
+{
+    std::cout << "3 + 4 + 5 = " << add(3, 4, 5) << '\n';
+    return 0;
+}
+
+int add(int x, int y)
+{
+    return x + y;
+}
+Solution: Doesn’t compile. The compiler will complain that it can’t find a matching add() function that takes 3 arguments. The forward declaration of add() only has two parameters.
+
+b)
+
+#include <iostream>
+int add(int x, int y);
+
+int main()
+{
+    std::cout << "3 + 4 + 5 = " << add(3, 4, 5) << '\n';
+    return 0;
+}
+
+int add(int x, int y, int z)
+{
+    return x + y + z;
+}
+Solution: Doesn’t compile. The compiler will complain that it can’t find a matching add() function that takes 3 arguments. The forward declaration of add() only has two parameters, and the definition of function add() that has 3 parameters hasn’t been seen yet
+
+c)
+
+#include <iostream>
+int add(int x, int y);
+
+int main()
+{
+    std::cout << "3 + 4 = " << add(3, 4) << '\n';
+    return 0;
+}
+
+int add(int x, int y, int z)
+{
+    return x + y + z;
+}
+Solution: Doesn’t link. The compiler will match the forward declaration of add to the function call to add() in main(). However, no add() function that takes two parameters was ever implemented (we only implemented one that took 3 parameters), so the linker will complain.
+
+d)
+
+#include <iostream>
+int add(int x, int y, int z);
+
+int main()
+{
+    std::cout << "3 + 4 + 5 = " << add(3, 4, 5) << '\n';
+    return 0;
+}
+
+int add(int z, int y, int x) // names don't match the declaration
+{
+    return x + y + z;
+}
+Solution: Compiles and links. The types in the function call to add() matches the forward declaration, and the definition of add() also matches. The fact that the names don’t match the declaration doesn’t matter, as the names in a declaration are optional (and if provided, ignored by the compiler).
+
+e)
+
+#include <iostream>
+int add(int, int, int);
+
+int main()
+{
+    std::cout << "3 + 4 + 5 = " << add(3, 4, 5) << '\n';
+    return 0;
+}
+
+int add(int x, int y, int z)
+{
+    return x + y + z;
+}     
+Solution: Compiles and links. This is the same as the prior case. Function declarations do not need to specify the names of the parameters (even though we generally prefer to include them).

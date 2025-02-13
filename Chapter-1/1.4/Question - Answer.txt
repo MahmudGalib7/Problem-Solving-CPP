@@ -1,0 +1,21 @@
+Question #1
+
+What is the difference between initialization and assignment?
+
+Solution:- Initialization gives a variable an initial value at the point when it is created. Assignment gives a variable a value at some point after the variable is created.
+
+Question #2
+
+What form of initialization should you prefer when you want to initialize a variable with a specific value?
+
+Solution:- Direct list initialization (aka. direct brace initialization)
+
+Question #3
+
+What are default initialization and value initialization? What is the behavior of each? Which should you prefer?
+
+Solution:- Default initialization is when a variable initialization has no initializer (e.g. int x;). In most cases, the variable is left with an indeterminate value.
+
+Value initialization is when a variable initialization has an empty brace (e.g. int x{};). In most cases this will perform zero-initialization.
+
+You should prefer value initialization to default initialization.
