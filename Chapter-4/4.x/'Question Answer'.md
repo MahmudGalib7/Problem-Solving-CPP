@@ -99,7 +99,7 @@ At 4 seconds, the ball is at height: 21.6 meters
 At 5 seconds, the ball is on the ground.
 ```
 
-[!NOTE]
+> !NOTE
 > Note: Depending on the height of the tower, the ball may not reach the ground in 5 seconds -- that’s okay. We’ll improve this program once we’ve covered loops.
 > Note: The ^ symbol isn’t an exponent in C++. Implement the formula using multiplication instead of exponentiation.
 > Note: Remember to use double literals for doubles, e.g. 2.0 rather than 2.
