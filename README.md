@@ -2,8 +2,8 @@
 
 > My solutions and notes while learning C++ from [learncpp.com](https://www.learncpp.com) and later C++ Primer.
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/repo-name?style=social)](https://github.com/yourusername/repo-name/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/repo-name?style=social)](https://github.com/yourusername/repo-name/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/MahmudGalib/repo-name?style=social)](https://github.com/MahmudGalib7/Problem-Solving-CPP/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/MahmudGalib7/repo-name?style=social)](https://github.com/MahmudGalib7/Problem-Solving-CPP/network/members)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🚀 Current Progress
