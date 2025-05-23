@@ -1,6 +1,6 @@
----
-
 # 🚀 C++ Learning Journey
+
+---
 
 > 🧠 My personal notes, practice problems, and progress as I learn modern C++ from [learncpp.com](https://www.learncpp.com) and the *C++ Primer* 📘.
 
