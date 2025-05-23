@@ -88,7 +88,7 @@ Simulate a ball dropped from a tower under gravity, and print its height at each
 > `distance = (gravity * time^2) / 2`
 > Since `^` isn't exponentiation in C++, use `time * time`.
 
-> 💡 **Note:**
+> [!NOTE]
 >
 > * Use `double` literals (e.g., `2.0` instead of `2`)
 > * Don't let the ball go below ground level.
