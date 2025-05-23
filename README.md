@@ -150,5 +150,4 @@ Feel free to use, share, and improve this project.
 
 > 👨‍💻 Maintained by [@MahmudGalib7](https://github.com/MahmudGalib7) — learning by building.
 
-
 ---
