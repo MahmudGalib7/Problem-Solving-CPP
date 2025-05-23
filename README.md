@@ -16,7 +16,8 @@
 📚 A comprehensive dive into C++, starting from fundamentals to advanced concepts.  
 🔍 Focused on problem-solving, best practices, and mastering modern C++.
 
-> ⚠️ **NOTE**: This repo is a live journal of my learning — updated regularly as I progress.
+> [!NOTE]
+> This repo is a live journal of my learning — updated regularly as I progress.
 
 ---
 
